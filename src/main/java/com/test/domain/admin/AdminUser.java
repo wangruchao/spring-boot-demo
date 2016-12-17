@@ -1,4 +1,4 @@
-package com.test.domain;
+package com.test.domain.admin;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,8 +11,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "user")
-public class User implements Serializable {
+@Table(name = "adminuser")
+public class AdminUser implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	Long id;
@@ -48,6 +48,7 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", createtime=" + createtime + "]";
+		return "AdminUser [id=" + id + ", name=" + name + ", createtime=" + createtime + "]";
 	}
+
 }
