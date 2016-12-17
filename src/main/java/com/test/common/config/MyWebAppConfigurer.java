@@ -6,6 +6,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import com.test.common.interceptor.MyInterceptor1;
 import com.test.common.interceptor.MyInterceptor2;
  
+
+/**
+ * 拦截器链
+ * @author Administrator
+ *
+ */
 @Configuration
 public class MyWebAppConfigurer extends WebMvcConfigurerAdapter {
  
