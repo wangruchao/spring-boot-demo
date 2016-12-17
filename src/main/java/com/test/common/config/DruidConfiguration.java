@@ -1,4 +1,4 @@
-package com.test.common.servlet;
+package com.test.common.config;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -38,7 +38,7 @@ public class DruidConfiguration {
 		// permitted to view this page.
 		servletRegistrationBean.addInitParameter("deny", "192.168.1.73");
 		// 登录查看信息的账号密码.
-		servletRegistrationBean.addInitParameter("loginUsername", "admin2");
+		servletRegistrationBean.addInitParameter("loginUsername", "admin");
 		servletRegistrationBean.addInitParameter("loginPassword", "123456");
 		// 是否能够重置数据.
 		servletRegistrationBean.addInitParameter("resetEnable", "false");
