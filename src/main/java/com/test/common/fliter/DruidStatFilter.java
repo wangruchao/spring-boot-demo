@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebInitParam;
 import com.alibaba.druid.support.http.WebStatFilter;
 
 /**
- * druid过滤器.
+ * druid过滤器.（第一种方式）（第一种方式）DruidStatViewServlet.java DruidStatFilter.java
  * 
  * @author Administrator
  *

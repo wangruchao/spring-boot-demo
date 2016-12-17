@@ -9,7 +9,7 @@ import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 
 /**
- * druid 配置.
+ * druid 配置.(第二种方式)
  *
  * 这样的方式不需要添加注解：@ServletComponentScan
  * 
