@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  *
  */
 @Component
-@Order(value=2)
+@Order(value=2)		//值越大优先执行
 public class MyStartupRunner2 implements CommandLineRunner {
  
     @Override

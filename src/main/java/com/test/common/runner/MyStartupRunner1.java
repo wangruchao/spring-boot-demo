@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
  
 /**
  * 服务启动执行
+ * @author Administrator
  *
- * @author   Angel(QQ:412887952)
  */
 @Component
 @Order(value=1)
