@@ -30,7 +30,7 @@ public class AdminController {
 
 	@RequestMapping("/list")
 	public String list(Map<String, Object> map) {
-		map.put("list", "");
+		map.put("list", "11");
 		return "/admin/list";
 	}
 
