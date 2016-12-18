@@ -16,9 +16,10 @@ public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Long id;
-	private String name;
-	private Date createtime;
+	private Long			  id;
+	private String			  name;
+	private Integer			  age;
+	private Date			  createtime;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,6 +40,14 @@ public class User implements Serializable {
 		this.name = name;
 	}
 
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
 	public Date getCreatetime() {
 		return createtime;
 	}
@@ -49,6 +58,7 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", createtime=" + createtime + "]";
+		return "User [id=" + id + ", name=" + name + ", age=" + age + ", createtime=" + createtime + "]";
 	}
+
 }

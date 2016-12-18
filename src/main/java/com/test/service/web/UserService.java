@@ -19,7 +19,7 @@ public class UserService {
 	UserJdbcTemplate userJdbcTemplate;
 
 	@Autowired
-	UserRepository userRepository;
+	UserRepository	 userRepository;
 
 	public List<User> findAll() {
 		return userRepository.findAll();

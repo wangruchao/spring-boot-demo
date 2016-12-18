@@ -36,7 +36,7 @@ public class RepositoryPrimaryConfig {
 
 	@Autowired
 	@Qualifier("primaryDS")
-	private DataSource primaryDS;
+	private DataSource	  primaryDS;
 
 	@Bean(name = "entityManagerPrimary")
 	@Primary
@@ -61,6 +61,12 @@ public class RepositoryPrimaryConfig {
 		return new JpaTransactionManager(entityManagerFactoryPrimary(builder).getObject());
 	}
 
+	/**
+	 * JdbcTemplate
+	 * 
+	 * @param dataSource
+	 * @return
+	 */
 	@Bean(name = "primaryJdbcTemplate")
 	@Primary
 	public JdbcTemplate primaryJdbcTemplate(@Qualifier("primaryDS") DataSource dataSource) {

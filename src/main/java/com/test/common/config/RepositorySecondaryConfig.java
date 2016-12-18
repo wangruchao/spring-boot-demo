@@ -28,7 +28,7 @@ public class RepositorySecondaryConfig {
 
 	@Autowired
 	@Qualifier("secondaryDS")
-	private DataSource secondaryDS;
+	private DataSource	  secondaryDS;
 
 	@Bean(name = "entityManagerSecondary")
 	public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
@@ -50,6 +50,12 @@ public class RepositorySecondaryConfig {
 		return new JpaTransactionManager(entityManagerFactorySecondary(builder).getObject());
 	}
 
+	/**
+	 * JdbcTemplate
+	 * 
+	 * @param dataSource
+	 * @return
+	 */
 	@Bean(name = "secondaryJdbcTemplate")
 	public JdbcTemplate secondaryJdbcTemplate(@Qualifier("secondaryDS") DataSource dataSource) {
 		return new JdbcTemplate(dataSource);

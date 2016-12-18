@@ -15,9 +15,10 @@ public class AdminExceptionHandler {
 		// the framework handle it - like the OrderNotFoundException example
 		// at the start of this post.
 		// AnnotationUtils is a Spring Framework utility class.
-//		if (AnnotationUtils.findAnnotation(e.getClass(), ResponseStatus.class) != null) {
-//			throw e;
-//		}
+		// if (AnnotationUtils.findAnnotation(e.getClass(),
+		// ResponseStatus.class) != null) {
+		// throw e;
+		// }
 		// Otherwise setup and send the user to a default error-view.
 		e.printStackTrace();
 		ModelAndView mav = new ModelAndView();

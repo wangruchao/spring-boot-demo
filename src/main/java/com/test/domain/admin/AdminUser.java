@@ -15,9 +15,9 @@ import javax.validation.constraints.NotNull;
 public class AdminUser implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	Long id;
-	String name;
-	Date createtime;
+	Long					  id;
+	String					  name;
+	Date					  createtime;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
