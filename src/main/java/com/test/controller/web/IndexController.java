@@ -44,7 +44,7 @@ public class IndexController {
 	public String likeName(@RequestParam(value = "pageNo", defaultValue = "0") int pageNo, Map<String, Object> map) {
 		PageHelper.startPage(pageNo, 1);
 		List<User> list = userMapper.selectAll();
-		map.put("hello", list);
+		map.put("hello", list.get(0));
 		return "/index";
 	}
 }

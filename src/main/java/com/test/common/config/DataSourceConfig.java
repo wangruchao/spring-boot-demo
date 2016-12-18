@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+import com.alibaba.druid.pool.DruidDataSource;
+
 @Configuration
 public class DataSourceConfig {
 
@@ -18,6 +20,12 @@ public class DataSourceConfig {
 	@ConfigurationProperties(prefix = "spring.primary.datasource")
 	public DataSource primaryDataSource() {
 		return DataSourceBuilder.create().build();
+//		DruidDataSource dataSource = new DruidDataSource();
+//        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//        dataSource.setUrl(dbUrl);
+//        dataSource.setUsername(dbUser);
+//        dataSource.setPassword(dbPassword);
+//        return dataSource;
 	}
 
 	@Bean(name = "secondaryDS")
