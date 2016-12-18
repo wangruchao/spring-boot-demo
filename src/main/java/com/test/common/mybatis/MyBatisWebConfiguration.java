@@ -39,14 +39,14 @@ public class MyBatisWebConfiguration {
 		// 分页插件
 		PageHelper pageHelper = new PageHelper();
 		Properties properties = new Properties();
-//		properties.setProperty("dialect", "mysql");
+		// properties.setProperty("dialect", "mysql");
 		properties.setProperty("pageSizeZero", "true");
 		properties.setProperty("offsetAsPageNum", "true");
 		properties.setProperty("rowBoundsWithCount", "true");
 		properties.setProperty("reasonable", "true");
 		pageHelper.setProperties(properties);
 		sessionFactory.setPlugins(new Interceptor[] { pageHelper });
-		
+
 		sessionFactory.setDataSource(rdsDataSource);
 		return sessionFactory.getObject();
 	}

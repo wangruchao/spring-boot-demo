@@ -5,8 +5,8 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
- * 服务启动执行
- * 启动加载数据 CommandLineRunner
+ * 服务启动执行 启动加载数据 CommandLineRunner
+ * 
  * @author Administrator
  *
  */

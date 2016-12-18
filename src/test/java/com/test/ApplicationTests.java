@@ -1,5 +1,7 @@
 package com.test;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.test.common.properties.TestSettings;
+import com.test.domain.admin.AdminUser;
 import com.test.domain.web.User;
+import com.test.mapper.admin.AdminUserMapper;
 import com.test.mapper.web.UserMapper;
 import com.test.repository.web.UserRepository;
 
@@ -16,11 +20,13 @@ import com.test.repository.web.UserRepository;
 public class ApplicationTests {
 
 	@Autowired
-	UserRepository userDao;
+	UserRepository	userDao;
 	@Autowired
-	TestSettings   testSettings;
+	TestSettings	testSettings;
 	@Autowired
-	UserMapper	   userMapper;
+	UserMapper		userMapper;
+	@Autowired
+	AdminUserMapper	adminUserMapper;
 
 	@Test
 	public void contextLoads() {
@@ -37,6 +43,26 @@ public class ApplicationTests {
 	public void testFindByName() {
 		User user = userMapper.findByName("aa");
 		System.out.println(user);
+	}
+
+	@Test
+	public void testAdminUserMapper() {
+		AdminUser adminUser = new AdminUser();
+		adminUser.setName("动态sql");
+		adminUserMapper.insert(adminUser);
+		System.out.println(adminUser);
+
+		adminUser.setName("修改动态sql");
+		adminUserMapper.update(adminUser);
+		System.out.println(adminUser);
+		List<AdminUser> list = adminUserMapper.findAll();
+		System.out.println(list);
+
+		adminUserMapper.delete(adminUser.getId());
+
+		list = adminUserMapper.findAll();
+		System.out.println(list);
+
 	}
 
 	/*

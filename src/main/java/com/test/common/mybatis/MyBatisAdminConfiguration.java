@@ -24,10 +24,12 @@ import com.github.pagehelper.PageHelper;
 @Configuration
 public class MyBatisAdminConfiguration {
 
-//	@Bean(name = "adsTransactionManager")
-//	public DataSourceTransactionManager adsTransactionManager(@Qualifier("secondaryDS") DataSource adsDataSource) {
-//		return new DataSourceTransactionManager(adsDataSource);
-//	}
+	// @Bean(name = "adsTransactionManager")
+	// public DataSourceTransactionManager
+	// adsTransactionManager(@Qualifier("secondaryDS") DataSource adsDataSource)
+	// {
+	// return new DataSourceTransactionManager(adsDataSource);
+	// }
 
 	@Bean(name = "adsSqlSessionFactory")
 	public SqlSessionFactory adsSqlSessionFactory(@Qualifier("secondaryDS") DataSource adsDataSource) throws Exception {
@@ -35,14 +37,14 @@ public class MyBatisAdminConfiguration {
 		// 分页插件
 		PageHelper pageHelper = new PageHelper();
 		Properties properties = new Properties();
-//		properties.setProperty("dialect", "mysql");
+		// properties.setProperty("dialect", "mysql");
 		properties.setProperty("pageSizeZero", "true");
 		properties.setProperty("offsetAsPageNum", "true");
 		properties.setProperty("rowBoundsWithCount", "true");
 		properties.setProperty("reasonable", "true");
 		pageHelper.setProperties(properties);
 		sessionFactory.setPlugins(new Interceptor[] { pageHelper });
-				
+
 		sessionFactory.setDataSource(adsDataSource);
 		return sessionFactory.getObject();
 	}
