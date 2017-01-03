@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>ADMIN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 th:inline="text">修改菜单</h1>
+	<form action="/admin/menu/edit" method="get" th:object="${menu}">
+		<input type="hidden" name="id" th:value="*{id}" />
+		<p>
+			菜单：<input type="text" name="name" th:value="*{name}" />
+		</p>
+		<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">NameError</p>
+		<p>
+			URL：<input type="text" name="url" th:value="*{url}" />
+		</p>
+		<p th:if="${#fields.hasErrors('url')}" th:errors="*{url}">UrlError</p>
+		<p>
+			<button>修改</button>
+		</p>
+	</form>
+</body>
+</html>

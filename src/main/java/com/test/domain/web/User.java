@@ -10,19 +10,26 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @Table(name = "user")
+@ApiModel(description = "用户实体类")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Long			  id;
-	private String			  name;
-	private Integer			  age;
-	private Date			  createtime;
+	private Long id;
+	private String name;
+	private Integer age;
+	private Date createtime;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@ApiModelProperty(value = "用户Id")
 	public Long getId() {
 		return id;
 	}
@@ -32,6 +39,7 @@ public class User implements Serializable {
 	}
 
 	@NotNull
+	@ApiModelProperty(value = "年龄")
 	public String getName() {
 		return name;
 	}
@@ -48,6 +56,7 @@ public class User implements Serializable {
 		this.age = age;
 	}
 
+	@JSONField(serialize = false) // json忽略字段
 	public Date getCreatetime() {
 		return createtime;
 	}

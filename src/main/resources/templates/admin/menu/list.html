@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>ADMIN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 th:inline="text">菜单列表</h1>
+	<h2 th:inline="text">
+		<a th:href="@{/admin/menu/toadd}">新增菜单</a>
+	</h2>
+	<table border="1">
+		<tr>
+			<th>菜单ID</th>
+			<th>菜单名称</th>
+			<th>URL</th>
+			<th>父ID</th>
+			<th>操作</th>
+		</tr>
+		<tr th:each="menu,iterStat : ${list}">
+			<td th:text="${menu.id}">菜单ID</td>
+			<td th:text="${menu.name}">菜单名称</td>
+			<td th:text="${menu.url}">URL</td>
+			<td th:text="${menu.parent}">父ID</td>
+			<td><a th:href="@{'/admin/menu/'+${menu.id}+'/toedit'}">修改</a></td>
+		</tr>
+	</table>
+
+</body>
+</html>

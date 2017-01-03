@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>ADMIN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 th:inline="text">角色列表</h1>
+	<h2 th:inline="text">
+		<a th:href="@{/admin/role/toadd}">新增角色</a>
+	</h2>
+	<table border="1">
+		<tr>
+			<th>用户ID</th>
+			<th>用户名</th>
+			<th>备注</th>
+			<th>菜单</th>
+			<th>操作</th>
+		</tr>
+		<tr th:each="role,iterStat : ${list}">
+			<td th:text="${role.id}">用户ID</td>
+			<td th:text="${role.name}">用户名</td>
+			<td th:text="${role.memo}">备注</td>
+			<td>
+				<span th:each="m,iterStat : ${role.menus}" th:text="${m.name+'|'}"></span>
+			</td>
+			<td><a th:href="@{'/admin/role/'+${role.id}+'/toedit'}">修改</a></td>
+		</tr>
+	</table>
+
+</body>
+</html>

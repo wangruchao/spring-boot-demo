@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>ADMIN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 th:inline="text">新增用户</h1>
+	<form action="/admin/user/add" method="get" th:object="${user}">
+		<p>
+			账号：<input type="text" name="name" th:value="*{name}" />
+		</p>
+		<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">NameError</p>
+		<p>
+			密码：<input type="text" name="password" th:value="*{password}" />
+		</p>
+		<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">passwordError</p>
+		<p>
+			角色： <span th:each="role,iterStat : ${roles}"> <input
+				type="checkbox" name="roleids" th:id="${role.id}"
+				th:text="${role.name}" th:checked="${'(role.id)'.contains('1')}" />
+			</span>
+		</p>
+		<p>
+			<button>提交</button>
+		</p>
+	</form>
+</body>
+</html>

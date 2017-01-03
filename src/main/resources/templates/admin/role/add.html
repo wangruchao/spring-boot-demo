@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>ADMIN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 th:inline="text">ROLEADD.html</h1>
+	<form action="/admin/role/add" method="get" th:object="${role}">
+		<input type="hidden" name="id" th:value="*{id}" />
+		<p>
+			角色：<input type="text" name="name" th:value="*{name}" />
+		</p>
+		<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">NameError</p>
+		<p>
+			备注：<input type="text" name="memo" th:value="*{memo}" />
+		</p>
+		<p th:if="${#fields.hasErrors('memo')}" th:errors="*{memo}">MemoError</p>
+		<p>
+			<button>修改</button>
+		</p>
+	</form>
+</body>
+</html>

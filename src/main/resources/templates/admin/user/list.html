@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>ADMIN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 th:inline="text">用户列表</h1>
+	<h2 th:inline="text">
+		<a th:href="@{/admin/user/toadd}">新增用户</a>
+	</h2>
+	<table border="1">
+		<tr>
+			<th>用户ID</th>
+			<th>用户名</th>
+			<th>密码</th>
+			<th>操作</th>
+			<th>状态变量：index</th>
+			<th>状态变量：count</th>
+			<th>状态变量：size</th>
+			<th>状态变量：current.name</th>
+			<th>状态变量：even</th>
+			<th>状态变量：odd</th>
+			<th>状态变量：first</th>
+			<th>状态变量：last</th>
+		</tr>
+		<tr th:each="user,iterStat : ${list}">
+			<td th:text="${user.id}">用户ID</td>
+			<td th:text="${user.name}">用户名</td>
+			<td th:text="${user.password}">密码</td>
+			<td><a th:href="@{'/admin/user/'+${user.id}+'/toedit'}">修改</a></td>
+			<th th:text="${iterStat.index}">状态变量：index</th>
+			<th th:text="${iterStat.count}">状态变量：count</th>
+			<th th:text="${iterStat.size}">状态变量：size</th>
+			<th th:text="${iterStat.current.name}">状态变量：current</th>
+			<th th:text="${iterStat.even}">状态变量：even****</th>
+			<th th:text="${iterStat.odd}">状态变量：odd</th>
+			<th th:text="${iterStat.first}">状态变量：first</th>
+			<th th:text="${iterStat.last}">状态变量：last</th>
+		</tr>
+	</table>
+
+</body>
+</html>

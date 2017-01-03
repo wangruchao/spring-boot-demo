@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>ADMIN</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1 th:inline="text">修改用户</h1>
+	<form action="/admin/user/edit" method="get" th:object="${user}">
+		<input type="hidden" name="id" th:value="*{id}" />
+		<p>
+			账号：<span th:text="*{name}"></span>
+		</p>
+		<p>
+			角色： <span th:each="role,iterStat : ${roles}"> <input
+				type="checkbox" name="roleids" th:value="${role.id}"
+				th:text="${role.name}" th:checked="false" />
+			</span>
+		</p>
+		<p>
+			<button>修改</button>
+		</p>
+	</form>
+</body>
+</html>
