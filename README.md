@@ -2,14 +2,14 @@
 ## hibernate5 JPA  多数据源
 ## spring data
 ## mybatis 多数据源
-  ## mybatis pagehelper 分页
-  ## mybatis 注解形式
-  ## mybatis-plus CRUD
+  ### mybatis pagehelper 分页
+  ### mybatis 注解形式
+  ### mybatis-plus CRUD
 ## spring security 权限控制
-  ## 后台管理实例
+  ### 后台管理实例
 ## alibaba 数据源（监控）
-  ## alibaba fastjson
-  ## druid 监控实例
+  ### alibaba fastjson
+  ### druid 监控实例
 ## swagger2 接口API
 ## thymeleaf 前端模板
 ## spring AOP实例
