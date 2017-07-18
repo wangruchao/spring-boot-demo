@@ -6,7 +6,7 @@
   ### mybatis 注解形式
   ### mybatis-plus CRUD
 ## spring security 权限控制
-  ### admin后台管理实例
+  ### 后台管理实例
 ## alibaba 数据源（监控）
   ### alibaba fastjson
   ### druid 监控实例
